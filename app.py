@@ -190,7 +190,7 @@ else:
 
 if st.button('GENERATE'):
     mg = MelodyGenerator()
-    melody = mg.generate_melody( seed , 50 , SEQUENCE_LENGTH , 0.4)
+    melody = mg.generate_melody( seed , 500 , SEQUENCE_LENGTH , 0.4)
     print(melody)
     mg.save_melody(melody)
     st.download_button(
