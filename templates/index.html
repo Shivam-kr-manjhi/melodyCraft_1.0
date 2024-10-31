@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suno - Music App</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type='text/javascript' src='//www.midijs.net/lib/midi.js'></script>
+    <script>
+        const midiUrl = "{{ url_for('static', filename='audio/mela.mid') }}";
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>MUSIC-CRAFT</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Create</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Subscribe</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Notification</a></li>
+                <li><a href="{{ url_for('download_file', filename='your_song.mp3') }}"><button class="sign-in">⌛Sign In</button></a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="main">
+        <div class="top-section">
+            <div class="heading">Make a melody of your own</div>
+            <div class="searchbox">
+                <input type="text" class="inputbox" placeholder="Enter a seed : Number _ _ _ _ _ number ...">
+                <div class="create-btn" id="create-button">♫ Create</div>
+            </div>
+            
+        </div>
+        <div class="lower-section">
+            <div class="music-player">
+                <div class="track-info">
+                    <img src="{{ url_for('static', filename='images/img1.avif') }}" alt="Album Cover" class="album-cover">
+                    <div class="track-details">
+                        <h2 class="track-title" id="random">Party-Cat</h2>
+                        <h3 class="artist-name">RenhaL</h3>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 1%;"></div>
+                    </div>
+                    <div class="time">
+                        <span class="current-time"></span> / <span class="total-time"></span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="control-button" id="prev-button">|◀◀</button>
+                    <button class="control-button" id="play-button">
+                        ▶
+                       </button>
+                    <button class="control-button" id="next-button">▶▶|</button>
+                </div>
+                <div class="volume-control">
+                    <button class="volume-button">🔊</button>
+                    <input type="range" class="volume-slider" min="0" max="100" value="50">
+                </div>
+            </div>
+            </div>
+        <div class="middle-section">
+            <ul class="genres">
+                
+                <li class="global">
+                    <div class="headd"><h1>Cultural Trending</h1></div>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/immmg.jpeg') }}" alt="Logo">
+        
+                            <div class="card-overlay">
+                                <div class="duration">3:16</div>
+                                <div class="likes">
+                                    <span>2.8K</span> <i class="icon-like"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Chaoyang Dance ✨</h3>
+                                <p>[Lively, Bouncy Drop, J-pop]</p>
+                                <p>Wine loves ...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/image.png') }}" alt="Logo">
+                            <div class="card-overlay">
+                                <div class="duration">2:59</div>
+                                <div class="likes">
+                                    <span>2.1K</span> <i class="icon-like"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Golden Serenade ✨
+                                </h3>
+                                <p>[Smooth Jazz, Gentle Piano, Evening Chill]</p>
+                                <p>joyce star...</p>
+                            </div>
+                        </div>
+        
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/img4.jpg') }}" alt="Logoo">
+                            <div class="card-overlay">
+                                <div class="duration">2:59</div>
+                                <div class="likes">
+                                    <span>2.1K</span> <i class="icon-like"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Echoes of Dawn 🌅</h3>
+                                <p>[Calm Acoustic, Soothing Melodies, Morning Bliss]</p>
+                                <p>autistic ...</p>
+                            </div>
+                        </div>
+        
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/img2.webp') }}" alt="Logo">
+                            <div class="card-overlay">
+                                <div class="duration">2:59</div>
+                                <div class="likes">
+                                    <span>2.1K</span> <i class="icon-like"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3> Electric Pulse.. ⚡</h3>
+                                <p>[Energetic Beats, Synthwave, Retro Vibes]</p>
+                                <p>veremo ...</p>
+                            </div>
+                        </div>
+        
+        
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/img3.avif') }}" alt="Logo">
+                            <div class="card-overlay">
+                                <div class="duration">2:59</div>
+                                <div class="likes">
+                                    <span>2.1K</span> <i class="icon-like"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Mystic Groove 🌿</h3>
+                                <p>[Ethnic Fusion, Deep Bass, Trance Rhythms]
+
+                                </p>
+                                <p>ferero ...</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Add more cards as needed -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+            
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
