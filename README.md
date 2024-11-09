@@ -1,6 +1,6 @@
-![Screenshot 2024-10-31 125916](https://github.com/user-attachments/assets/c4326ad1-8c09-4415-8746-8ffaffd900f9)
 
 
+![Screenshot 2024-10-31 125916](https://github.com/user-attachments/assets/030775fc-efa9-4b30-80c5-971f81be2388)
 
 
 Welcome to Music-Craft, where you can create your own melody with just a few simple steps!
